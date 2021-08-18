@@ -46,7 +46,6 @@ struct MyWidgetsEntryView : View {
     }
 }
 
-@main
 struct MyWidgets: Widget {
     let kind: String = "MyWidgets"
 
@@ -56,6 +55,14 @@ struct MyWidgets: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+    }
+}
+
+@main
+struct MyWidgetsContainer: WidgetBundle {
+    @WidgetBundleBuilder
+    var body: some Widget {
+        MyWidgets()
     }
 }
 
