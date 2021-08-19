@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 
+// MARK: TimelineProvider
 struct ImageProvider: TimelineProvider {
     func placeholder(in context: Context) -> ImageEntry {
         ImageEntry(date: Date(), imageName: "dom_casmurro")
@@ -29,11 +30,13 @@ struct ImageProvider: TimelineProvider {
     }
 }
 
+// MARK: TimelineEntry
 struct ImageEntry: TimelineEntry {
     let date: Date
     let imageName: String
 }
 
+// MARK: View
 struct ImageWidgetEntryView : View {
     var entry: ImageProvider.Entry
     
@@ -51,6 +54,7 @@ struct ImageWidgetEntryView : View {
     }
 }
 
+// MARK: Widget
 struct ImageWidget: Widget {
     let kind: String = "ImageWidget"
 
@@ -64,6 +68,7 @@ struct ImageWidget: Widget {
     }
 }
 
+// MARK: WidgetBunble
 @main
 struct WidgetContainer: WidgetBundle {
     @WidgetBundleBuilder
