@@ -42,7 +42,7 @@ struct ImageWidgetEntryView : View {
             Image("dom_casmurro")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .shadow(radius: 5)
+                .shadow(color: .secondary, radius: 8)
                 .padding()
             Image(systemName: "bookmark.fill")
                 .foregroundColor(.blue)
