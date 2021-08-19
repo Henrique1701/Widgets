@@ -51,7 +51,6 @@ struct ImageWidgetEntryView : View {
     }
 }
 
-@main
 struct ImageWidget: Widget {
     let kind: String = "ImageWidget"
 
@@ -61,6 +60,15 @@ struct ImageWidget: Widget {
         }
         .configurationDisplayName("Cover Widget")
         .description("This is a widget that shows the cover of the last book you read.")
+        .supportedFamilies([.systemSmall])
+    }
+}
+
+@main
+struct WidgetContainer: WidgetBundle {
+    @WidgetBundleBuilder
+    var body: some Widget {
+        ImageWidget()
     }
 }
 
