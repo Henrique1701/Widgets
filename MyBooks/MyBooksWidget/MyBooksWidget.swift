@@ -8,60 +8,65 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+struct ImageProvider: TimelineProvider {
+    func placeholder(in context: Context) -> ImageEntry {
+        ImageEntry(date: Date(), imageName: "dom_casmurro")
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+    func getSnapshot(in context: Context, completion: @escaping (ImageEntry) -> ()) {
+        let entry = ImageEntry(date: Date(), imageName: "dom_casmurro")
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+    func getTimeline(in context: Context, completion: @escaping (Timeline<ImageEntry>) -> ()) {
+        var entries: [ImageEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
+        let entry = ImageEntry(date: Date(), imageName: "dom_casmurro")
+        entries.append(entry)
 
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let timeline = Timeline(entries: entries, policy: .never)
         completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct ImageEntry: TimelineEntry {
     let date: Date
+    let imageName: String
 }
 
-struct MyBooksWidgetEntryView : View {
-    var entry: Provider.Entry
-
+struct ImageWidgetEntryView : View {
+    var entry: ImageProvider.Entry
+    
     var body: some View {
-        Text(entry.date, style: .time)
+        ZStack (alignment: .topTrailing) {
+            Image("dom_casmurro")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .shadow(radius: 5)
+                .padding()
+            Image(systemName: "bookmark.fill")
+                .foregroundColor(.blue)
+                .padding()
+        }
     }
 }
 
 @main
-struct MyBooksWidget: Widget {
-    let kind: String = "MyBooksWidget"
+struct ImageWidget: Widget {
+    let kind: String = "ImageWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            MyBooksWidgetEntryView(entry: entry)
+        StaticConfiguration(kind: kind, provider: ImageProvider()) { entry in
+            ImageWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Cover Widget")
+        .description("This is a widget that shows the cover of the last book you read.")
     }
 }
 
 struct MyBooksWidget_Previews: PreviewProvider {
     static var previews: some View {
-        MyBooksWidgetEntryView(entry: SimpleEntry(date: Date()))
+        ImageWidgetEntryView(entry: ImageEntry(date: Date(), imageName: "dom_casmurro"))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
