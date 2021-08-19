@@ -434,7 +434,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jhfs.academy.cin.ufpe.br.SimpleWidgets.MyWidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = jhfs.academy.cin.ufpe.br.SimpleWidgets.MyWidgets2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -455,7 +455,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jhfs.academy.cin.ufpe.br.SimpleWidgets.MyWidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = jhfs.academy.cin.ufpe.br.SimpleWidgets.MyWidgets2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
