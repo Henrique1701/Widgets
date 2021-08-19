@@ -16,6 +16,8 @@
 		BE93B77926CE8F95004928F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE93B77826CE8F95004928F5 /* Assets.xcassets */; };
 		BE93B77D26CE8F95004928F5 /* MyBooksWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BE93B76F26CE8F8E004928F5 /* MyBooksWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BE93B78326CE8FEE004928F5 /* MyBooksWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93B78226CE8FEE004928F5 /* MyBooksWidget.swift */; };
+		BE93B78526CE9E09004928F5 /* ImageWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93B78426CE9E08004928F5 /* ImageWidget.swift */; };
+		BE93B78726CE9F5C004928F5 /* InformationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93B78626CE9F5C004928F5 /* InformationWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		BE93B77826CE8F95004928F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE93B77A26CE8F95004928F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE93B78226CE8FEE004928F5 /* MyBooksWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksWidget.swift; sourceTree = "<group>"; };
+		BE93B78426CE9E08004928F5 /* ImageWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWidget.swift; sourceTree = "<group>"; };
+		BE93B78626CE9F5C004928F5 /* InformationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				BE93B78226CE8FEE004928F5 /* MyBooksWidget.swift */,
 				BE93B77826CE8F95004928F5 /* Assets.xcassets */,
 				BE93B77A26CE8F95004928F5 /* Info.plist */,
+				BE93B78426CE9E08004928F5 /* ImageWidget.swift */,
+				BE93B78626CE9F5C004928F5 /* InformationWidget.swift */,
 			);
 			path = MyBooksWidget;
 			sourceTree = "<group>";
@@ -244,7 +250,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE93B78726CE9F5C004928F5 /* InformationWidget.swift in Sources */,
 				BE93B78326CE8FEE004928F5 /* MyBooksWidget.swift in Sources */,
+				BE93B78526CE9E09004928F5 /* ImageWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
